@@ -5,10 +5,10 @@ We will upload here the material for the [napari] workshop that will be held at 
 [Download the program]
 
 ## Registration
-The workshop is designed for students/researchers/ with python skills, interested in getting started with [napari].
-Participation is possible in person (please make sure to unregister if you are not able to attend to free a seat to other participants) on online.
+The workshop is designed for students/researchers/programmers with python experience, interested in getting started with [napari].
+Participation is possible in person (please make sure to unregister if you are not able to attend to free a seat to other participants) or online. Participation is free of charge.
 
-![raw](https://github.com/andreabassi78/napari_workshop_milan/raw/main/program/registration.png)[Register here for free]
+![raw](https://github.com/andreabassi78/napari_workshop_milan/raw/main/program/registration.png)[Register here]
 
 [napari]: https://github.com/napari/napari
 [Download the program]: https://github.com/andreabassi78/napari_workshop_milan/raw/main/program/Flyer.pdf
