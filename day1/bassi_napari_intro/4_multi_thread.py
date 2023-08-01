@@ -2,7 +2,7 @@
 """
 Created on Wed Jan 19 16:10:49 2022
 
-@author: andrea
+@author: Andrea Bassi
 """
 import napari
 import numpy as np
@@ -15,11 +15,10 @@ def update_layer(image):
                       contrast_limits=(0., 1.),
                       name=f'image_with_{sy}X{sx}_pixels')
 
-@thread_worker(connect={'returned': update_layer})
+@thread_worker
 def create_image_point_by_point(N):
     image = np.zeros((N, N))
     for y in range(N):
-        
         for x in range(N):
             image[y,x] = np.random.random(1)
             
@@ -30,13 +29,10 @@ def create_image_point_by_point(N):
 def create_image(pixel_num:int = 512):
     
     worker = create_image_point_by_point(pixel_num)
-    worker.returned.connect(update_layer)
+    worker.returned.connect(update_layer) # NOTE: you can include this in the decorator
     worker.start()
 
-
 viewer = napari.Viewer()
-
 viewer.window.add_dock_widget(create_image)
-
 napari.run()
 

@@ -96,11 +96,7 @@ class MyWidget(QWidget):
         self.generate_pupil()
         ASF = fftshift(fft2(ifftshift(self.pupil))) #* k**2/f**2 # Amplitude Spread Function
         PSF = np.abs(ASF)**2 # Point Spread Function
-        
-        # try:
-        #     self.viewer.layers['PSF'].data = PSF
-
-        # except:        
+                
         self.viewer.add_image(PSF,
                           name='PSF',
                           colormap='twilight')
@@ -110,5 +106,5 @@ if __name__ == '__main__':
    
     viewer = napari.Viewer()
     mywidget = MyWidget(viewer)
-    viewer.window.add_dock_widget(mywidget, name = 'my first widget')
+    viewer.window.add_dock_widget(mywidget, name = 'my psf generation widget')
     napari.run() 

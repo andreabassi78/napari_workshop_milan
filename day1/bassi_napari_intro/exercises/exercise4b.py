@@ -2,7 +2,7 @@
 """
 Created on Wed Jan 19 16:10:49 2022
 
-@author: andrea
+@author: Andrea Bassi
 """
 import napari
 import numpy as np
@@ -30,14 +30,11 @@ def create_image_point_by_point(N):
             if x==0 and y%10==0:
                 yield(image)
 
-@magicgui(call_button="create image", pixel_num={'max':2048})
+@magicgui(call_button="create image", pixel_num={'max':4096})
 def create_image(pixel_num:int = 512):
     create_image_point_by_point(pixel_num)
     
-
 viewer = napari.Viewer()
-
 viewer.window.add_dock_widget(create_image)
-
 napari.run()
 

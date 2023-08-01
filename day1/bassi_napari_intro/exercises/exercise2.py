@@ -10,13 +10,14 @@ from magicgui import magicgui
 import napari
 
 @magicgui(call_button="run segmentation")
-def segment(image_layer :Image, closing_size:int =4)->Labels:
+def segment(image_layer:Image, 
+            closing_size:int=4,
+            remove_smaller_than:int=20)->Labels:
     
     data = np.array(image_layer.data)
     thresh = threshold_otsu(data)
-    #closing_size = 4
     bw = closing(data > thresh, square(closing_size))
-    cleared = remove_small_objects(clear_border(bw), 20)
+    cleared = remove_small_objects(clear_border(bw), remove_smaller_than)
     label_image = label(cleared)
     
     return Labels(label_image)
