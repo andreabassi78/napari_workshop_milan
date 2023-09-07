@@ -29,7 +29,8 @@ This session is optional and meant for those interested in getting a head start 
 - Quick Overview of the course:
   -> ImSwitch (https://github.com/openUC2/ImSwitch)
   -> the Camera
-  -> UC2 + Camera + ImSwitch
+  -> the ESPressoscope Universe
+  -> UC2 + Camera + ImSwitch: https://github.com/openUC2/openUC2-SEEED-XIAO-Camera/tree/seeed
 - **Flashing the XIAO**
     - Comprehensive guide on how to flash the XIAO is available [here](https://matchboxscope.github.io/docs/Tutorials/ESP32RawUSBFrame#quickstart).
     - Visit [this website](https://matchboxscope.github.io/firmware/FLASH.html) to initiate the flash process.
