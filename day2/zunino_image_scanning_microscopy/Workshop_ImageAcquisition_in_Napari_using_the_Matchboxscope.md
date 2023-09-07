@@ -44,7 +44,8 @@ This session is optional and meant for those interested in getting a head start 
     - Visit [this website](https://matchboxscope.github.io/cameraserial/index.html) and select the port in the browser.
     - If everything is set up correctly, a live stream should show up.
     
-- **Python Commands for the Camera:**
+- **Serial Commands to Control the Camera:**
+  These commands can either be sent via a serial monitor (e.g. Arduino) or Pyserial at 2000000 BAUD, no lineeneding. 
     ```bash
     setting exposure time: t1000\n
     setting gain: g1\n
