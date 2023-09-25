@@ -5,8 +5,8 @@ Created on Mon Jan 17 23:09:58 2022
 @author: Andrea Bassi
 """
 import napari
-from qtpy.QtWidgets import QWidget, QPushButton, QSpinBox
-from qtpy.QtWidgets import QVBoxLayout, QFormLayout
+from qtpy.QtWidgets import QWidget
+from qtpy.QtWidgets import QVBoxLayout
 import numpy as np
 from skimage.filters import threshold_otsu
 from skimage.segmentation import clear_border
