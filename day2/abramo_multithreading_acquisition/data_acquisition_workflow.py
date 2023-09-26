@@ -30,7 +30,7 @@ def process_frame(in_q: deque, out_q: deque) -> None:
     while True:
         try:
             image = in_q.pop()
-            # image = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
+            image = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
             out_q.append(image)
         except IndexError: # thrown by calling in_q.pop() in case the deque is empty
             pass
