@@ -6,8 +6,16 @@ import cv2
 import math
 import base64
 
-def connect_to_usb_device(manufacturer="Espressif"):
+def connect_to_usb_device(manufacturer="Espressif", port=None):
     """Connect to a USB device given its manufacturer name."""
+    if port is not None:
+        try:
+            ser = serial.Serial(port, baudrate=2000000, timeout=1)
+            print(f"Connected to device: {port}")
+            ser.write_timeout = 1
+            return ser
+        except Exception as e:
+            print(e)
     ports = serial.tools.list_ports.comports()
     for port in ports:
         if port.manufacturer == manufacturer  or port.manufacturer == "Microsoft" :
@@ -20,6 +28,7 @@ def connect_to_usb_device(manufacturer="Espressif"):
                 print(f"Failed to connect to device: {port.description}")
     print("No matching USB device found.")
     return None
+    
 
 def calculate_base64_length(width, height):
     """Calculate the length of a base64 string for an image of given dimensions."""
@@ -42,7 +51,8 @@ def initCam():
 manufacturer = 'Espressif'
 
 # Connect to the USB device
-serialdevice = connect_to_usb_device(manufacturer)
+port=None # change this if you know the port already (e.g. COM3)
+serialdevice = connect_to_usb_device(manufacturer, port=port)
 
 # Initialize the camera
 initCam()
