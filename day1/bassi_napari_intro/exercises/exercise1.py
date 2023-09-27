@@ -7,7 +7,9 @@ Created on Tue Aug 1 11:25:23 2023
 
 from magicgui import magicgui
     
-@magicgui(result={"enabled":False}
+@magicgui(call_button=False,
+          result={"enabled":False},
+          #auto_call=True
           )
 def sum_floats(
     num1: float=5.0,

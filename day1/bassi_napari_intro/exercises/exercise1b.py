@@ -16,7 +16,7 @@ def sum_floats(
     result: float=0.0):
     pass
 
-# @sum_floats.num2.changed.connect
+#@sum_floats.num2.changed.connect
 @sum_floats.num1.changed.connect
 def on_num_changed():
     sum_floats.result.value = sum_floats.num1.value + sum_floats.num2.value
