@@ -40,6 +40,7 @@ This session is optional and meant for those interested in getting a head start 
         - pyserial
         - numpy
         - cv2
+    -  Source-code for reading frames from the ESP32 camera via Pyserial: https://github.com/Matchboxscope/matchboxscope-simplecamera/blob/rawframereadout/PYTHON/ESP32SerialCamGrayBytebuffer.py
         
 - **Understanding the Firmware** (Optional)
     - If curious, take a peek at what the ESP32 firmware is up to [here](https://matchboxscope.github.io/docs/Tutorials/ESP32RawUSBFrame#esp32-code).
